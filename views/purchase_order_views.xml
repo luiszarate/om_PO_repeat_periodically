@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="purchase_order_form_periodic_repetition" model="ir.ui.view">
+        <field name="name">purchase.order.form.periodic.repetition</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <button
+                    name="action_po_repeat_view_generated"
+                    type="object"
+                    class="oe_stat_button"
+                    icon="fa-copy"
+                    attrs="{'invisible': [('po_repeat_generated_count', '=', 0)]}"
+                >
+                    <field
+                        name="po_repeat_generated_count"
+                        string="Generated Orders"
+                        widget="statinfo"
+                    />
+                </button>
+            </xpath>
+            <xpath expr="//sheet/notebook" position="inside">
+                <page string="Periodic Repetition" name="periodic_repetition">
+                    <group>
+                        <group string="Schedule">
+                            <field name="po_repeat_active"/>
+                            <label for="po_repeat_interval" string="Repeat every"/>
+                            <div class="o_row">
+                                <field
+                                    name="po_repeat_interval"
+                                    class="oe_inline"
+                                    attrs="{'required': [('po_repeat_active', '=', True)]}"
+                                />
+                                <field
+                                    name="po_repeat_unit"
+                                    class="oe_inline"
+                                    attrs="{'required': [('po_repeat_active', '=', True)]}"
+                                />
+                            </div>
+                            <field
+                                name="po_repeat_next_date"
+                                attrs="{'required': [('po_repeat_active', '=', True)]}"
+                            />
+                        </group>
+                        <group string="Source">
+                            <field name="po_repeat_origin_id"/>
+                            <button
+                                name="action_po_repeat_generate_now"
+                                type="object"
+                                string="Generate Now"
+                                class="oe_highlight"
+                                attrs="{'invisible': [('state', '=', 'cancel')]}"
+                            />
+                            <p class="text-muted">
+                                Generated orders are created as drafts. Only standard purchase
+                                fields and lines are copied; custom module fields are excluded.
+                            </p>
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="purchase_order_tree_periodic_repetition" model="ir.ui.view">
+        <field name="name">purchase.order.tree.periodic.repetition</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="inside">
+                <field name="po_repeat_active" optional="hide"/>
+                <field name="po_repeat_next_date" optional="hide"/>
+                <field name="po_repeat_origin_id" optional="hide"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

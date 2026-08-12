@@ -1,0 +1,107 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#   * om_PO_repeat_periodically
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"PO-Revision-Date: 2026-08-12 00:00+0000\n"
+"Last-Translator: Imago\n"
+"Language: es\n"
+"Language-Team: Spanish\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: om_PO_repeat_periodically
+msgid "Repeat periodically"
+msgstr "Repetir periódicamente"
+
+#. module: om_PO_repeat_periodically
+msgid "Repeat every"
+msgstr "Repetir cada"
+
+#. module: om_PO_repeat_periodically
+msgid "Period"
+msgstr "Periodo"
+
+#. module: om_PO_repeat_periodically
+msgid "Day(s)"
+msgstr "Día(s)"
+
+#. module: om_PO_repeat_periodically
+msgid "Week(s)"
+msgstr "Semana(s)"
+
+#. module: om_PO_repeat_periodically
+msgid "Month(s)"
+msgstr "Mes(es)"
+
+#. module: om_PO_repeat_periodically
+msgid "Year(s)"
+msgstr "Año(s)"
+
+#. module: om_PO_repeat_periodically
+msgid "Next creation date"
+msgstr "Siguiente fecha de creación"
+
+#. module: om_PO_repeat_periodically
+msgid "Recurring source order"
+msgstr "Orden recurrente de origen"
+
+#. module: om_PO_repeat_periodically
+msgid "Generated orders"
+msgstr "Órdenes generadas"
+
+#. module: om_PO_repeat_periodically
+msgid "Generated orders count"
+msgstr "Cantidad de órdenes generadas"
+
+#. module: om_PO_repeat_periodically
+msgid "Generated Orders"
+msgstr "Órdenes generadas"
+
+#. module: om_PO_repeat_periodically
+msgid "Periodic Repetition"
+msgstr "Repetición periódica"
+
+#. module: om_PO_repeat_periodically
+msgid "Schedule"
+msgstr "Programación"
+
+#. module: om_PO_repeat_periodically
+msgid "Source"
+msgstr "Origen"
+
+#. module: om_PO_repeat_periodically
+msgid "Generate Now"
+msgstr "Generar ahora"
+
+#. module: om_PO_repeat_periodically
+msgid "Generated Purchase Order"
+msgstr "Orden de compra generada"
+
+#. module: om_PO_repeat_periodically
+msgid "The repetition interval must be greater than zero."
+msgstr "El intervalo de repetición debe ser mayor que cero."
+
+#. module: om_PO_repeat_periodically
+msgid "Set the next creation date before enabling repetition."
+msgstr "Indique la siguiente fecha de creación antes de activar la repetición."
+
+#. module: om_PO_repeat_periodically
+msgid "A recurring purchase order must have at least one order line."
+msgstr "Una orden de compra recurrente debe tener al menos una línea."
+
+#. module: om_PO_repeat_periodically
+msgid "A cancelled purchase order cannot be repeated."
+msgstr "Una orden de compra cancelada no se puede repetir."
+
+#. module: om_PO_repeat_periodically
+msgid "Purchase Orders: generate recurring orders"
+msgstr "Órdenes de compra: generar órdenes recurrentes"
+
+#. module: om_PO_repeat_periodically
+msgid "Generated orders are created as drafts. Only standard purchase fields and lines are copied; custom module fields are excluded."
+msgstr "Las órdenes generadas se crean en borrador. Sólo se copian los campos y líneas estándar de compras; se excluyen los campos de módulos personalizados."
