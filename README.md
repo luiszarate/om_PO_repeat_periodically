@@ -18,10 +18,11 @@ muestra todas las órdenes creadas desde la plantilla.
 
 ## Copia segura
 
-El addon no utiliza una copia completa del registro. Sólo transfiere una lista
-explícita de campos estándar de la orden y sus líneas. Los campos agregados por
-otros módulos —por ejemplo banderas de conciliación, aprobaciones o estados de
-procesos externos— no se copian. La orden generada:
+El addon no utiliza una copia indiscriminada del registro. Transfiere una lista
+explícita de campos estándar de la orden y sus líneas y, adicionalmente, detecta
+en tiempo de ejecución todos los campos obligatorios (`required=True`) aportados
+por cualquier otro módulo. Esto permite crear la réplica aunque otro addon haya
+agregado datos custom obligatorios. La orden generada:
 
 - queda en borrador;
 - recibe un número nuevo mediante la secuencia normal de Odoo;
@@ -31,7 +32,15 @@ procesos externos— no se copian. La orden generada:
 - ajusta las fechas previstas de las líneas manteniendo su diferencia respecto
   a la fecha de la orden original;
 - referencia la orden plantilla para mantener trazabilidad;
+- queda marcada explícitamente como una instancia generada;
 - no hereda la configuración de repetición.
+
+Las instancias generadas no pueden habilitarse como plantillas ni utilizar el
+botón **Generar ahora**. El cron también exige que la orden no tenga marca ni
+orden de origen, evitando cadenas de repeticiones de repeticiones.
+
+Al actualizar desde la versión anterior, una migración marca automáticamente
+las réplicas existentes que ya tengan una orden de origen.
 
 ## Instalación
 

@@ -24,37 +24,51 @@
                 <page string="Periodic Repetition" name="periodic_repetition">
                     <group>
                         <group string="Schedule">
-                            <field name="po_repeat_active"/>
+                            <field
+                                name="po_repeat_active"
+                                attrs="{'readonly': ['|', ('po_repeat_is_generated', '=', True), ('po_repeat_origin_id', '!=', False)]}"
+                            />
                             <label for="po_repeat_interval" string="Repeat every"/>
                             <div class="o_row">
                                 <field
                                     name="po_repeat_interval"
                                     class="oe_inline"
-                                    attrs="{'required': [('po_repeat_active', '=', True)]}"
+                                    attrs="{
+                                        'required': [('po_repeat_active', '=', True)],
+                                        'readonly': ['|', ('po_repeat_is_generated', '=', True), ('po_repeat_origin_id', '!=', False)]
+                                    }"
                                 />
                                 <field
                                     name="po_repeat_unit"
                                     class="oe_inline"
-                                    attrs="{'required': [('po_repeat_active', '=', True)]}"
+                                    attrs="{
+                                        'required': [('po_repeat_active', '=', True)],
+                                        'readonly': ['|', ('po_repeat_is_generated', '=', True), ('po_repeat_origin_id', '!=', False)]
+                                    }"
                                 />
                             </div>
                             <field
                                 name="po_repeat_next_date"
-                                attrs="{'required': [('po_repeat_active', '=', True)]}"
+                                attrs="{
+                                    'required': [('po_repeat_active', '=', True)],
+                                    'readonly': ['|', ('po_repeat_is_generated', '=', True), ('po_repeat_origin_id', '!=', False)]
+                                }"
                             />
                         </group>
                         <group string="Source">
                             <field name="po_repeat_origin_id"/>
+                            <field name="po_repeat_is_generated"/>
                             <button
                                 name="action_po_repeat_generate_now"
                                 type="object"
                                 string="Generate Now"
                                 class="oe_highlight"
-                                attrs="{'invisible': [('state', '=', 'cancel')]}"
+                                attrs="{'invisible': ['|', '|', ('state', '=', 'cancel'), ('po_repeat_is_generated', '=', True), ('po_repeat_origin_id', '!=', False)]}"
                             />
                             <p class="text-muted">
-                                Generated orders are created as drafts. Only standard purchase
-                                fields and lines are copied; custom module fields are excluded.
+                                Generated orders are created as drafts. Standard purchase data
+                                and every required field, including fields from custom modules,
+                                are copied. Generated instances cannot repeat themselves.
                             </p>
                         </group>
                     </group>
@@ -72,6 +86,7 @@
                 <field name="po_repeat_active" optional="hide"/>
                 <field name="po_repeat_next_date" optional="hide"/>
                 <field name="po_repeat_origin_id" optional="hide"/>
+                <field name="po_repeat_is_generated" optional="hide"/>
             </xpath>
         </field>
     </record>

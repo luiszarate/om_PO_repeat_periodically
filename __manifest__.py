@@ -1,7 +1,7 @@
 {
     "name": "Purchase Order Periodic Repetition",
     "summary": "Create draft purchase orders periodically from a source order",
-    "version": "14.0.1.0.0",
+    "version": "14.0.1.1.0",
     "category": "Purchases",
     "author": "Imago",
     "license": "LGPL-3",

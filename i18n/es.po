@@ -51,6 +51,14 @@ msgid "Recurring source order"
 msgstr "Orden recurrente de origen"
 
 #. module: om_PO_repeat_periodically
+msgid "Generated recurring instance"
+msgstr "Instancia recurrente generada"
+
+#. module: om_PO_repeat_periodically
+msgid "Identifies orders created automatically or manually from a recurring source."
+msgstr "Identifica las órdenes creadas automática o manualmente desde un origen recurrente."
+
+#. module: om_PO_repeat_periodically
 msgid "Generated orders"
 msgstr "Órdenes generadas"
 
@@ -99,9 +107,13 @@ msgid "A cancelled purchase order cannot be repeated."
 msgstr "Una orden de compra cancelada no se puede repetir."
 
 #. module: om_PO_repeat_periodically
+msgid "An order generated from another order cannot be repeated again."
+msgstr "Una orden generada desde otra orden no se puede volver a repetir."
+
+#. module: om_PO_repeat_periodically
 msgid "Purchase Orders: generate recurring orders"
 msgstr "Órdenes de compra: generar órdenes recurrentes"
 
 #. module: om_PO_repeat_periodically
-msgid "Generated orders are created as drafts. Only standard purchase fields and lines are copied; custom module fields are excluded."
-msgstr "Las órdenes generadas se crean en borrador. Sólo se copian los campos y líneas estándar de compras; se excluyen los campos de módulos personalizados."
+msgid "Generated orders are created as drafts. Standard purchase data and every required field, including fields from custom modules, are copied. Generated instances cannot repeat themselves."
+msgstr "Las órdenes generadas se crean en borrador. Se copian los datos estándar de compras y todos los campos obligatorios, incluidos los campos de módulos personalizados. Las instancias generadas no pueden repetirse a sí mismas."
