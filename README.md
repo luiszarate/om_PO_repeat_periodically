@@ -1,3 +1,5 @@
+> **Archivado el 2026-11-08.** Este repositorio contiene la versión para **Odoo 14 CE** de `om_PO_repeat_periodically`, que dejó de usarse ese día, cuando el ERP de Imago Aerospace pasó a Odoo 19. La versión para Odoo 19 se mantiene en el repositorio de la migración (`luiszarate/odoo-migration`, privado), carpeta `addons/19.0/om_PO_repeat_periodically`.
+
 # Repetición periódica de órdenes de compra — Odoo 14 CE
 
 Este addon permite usar una orden de compra como plantilla para crear nuevas
